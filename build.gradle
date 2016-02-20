@@ -1,0 +1,27 @@
+plugins {
+    id "com.jfrog.bintray" version "1.6"
+}
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+bintray {
+    user = 'bobvdvalk'
+    key = System.getProperty('BINTRAY_KEY')
+    publications = ['mavenMain'] 
+    publish = true
+    pkg {
+        repo = 'maven'
+        name = 'swinguiscaler4k'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/bobvdvalk/SwingUIScaler4K'
+    }
+}
+
+publishing {
+    publications {
+        mavenMain(MavenPublication) {
+            from components.java
+        }
+    }
+}
