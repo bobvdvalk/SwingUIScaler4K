@@ -13,8 +13,8 @@ public class UIScaler implements UIScalerInterface {
     /**
      * Set font and font size of your application
      *
-     * @param font - Name of your font
-     * @param size - Size for default computers (not 4K)
+     * @param font Name of your font
+     * @param size Size for default computers (not 4K)
      */
     public void setFontSize(String font, int size) {
 
@@ -57,9 +57,9 @@ public class UIScaler implements UIScalerInterface {
     public int calculateSize(int size) {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 
-        int display_width = gd.getDisplayMode().getWidth();
+        int displayWidth = gd.getDisplayMode().getWidth();
 
-        if(display_width < 1920) {
+        if(displayWidth <= 1920) {
             return size;
         } else {
             double current = size * 2.3;

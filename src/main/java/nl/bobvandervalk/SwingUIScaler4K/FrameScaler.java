@@ -17,8 +17,8 @@ public class FrameScaler implements FrameScalerInterface {
     /**
      * Set a size of the application
      *
-     * @param frame - JFrame object.
-     * @param dimension - The width and height of the window to want to have.
+     * @param frame JFrame object.
+     * @param dimension The width and height of the window to want to have.
      */
     @Override
     public void setSize(JFrame frame, Dimension dimension) {
@@ -27,23 +27,23 @@ public class FrameScaler implements FrameScalerInterface {
 
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 
-        int display_width = gd.getDisplayMode().getWidth();
+        int displayWidth = gd.getDisplayMode().getWidth();
 
-        if(display_width < 1920) {
+        if(displayWidth <= 1920) {
             frame.setSize(width, height);
         } else {
-            int set_width = width * 3;
-            int set_height = height * 3;
+            int setWidth = width * 3;
+            int setHeight = height * 3;
 
-            frame.setSize(set_width, set_height);
+            frame.setSize(setWidth, setHeight);
         }
     }
 
     /**
      * Size a minimum size of the frame
      *
-     * @param frame - Current JFrame that is loaded
-     * @param dimension - Dimensions you want to set
+     * @param frame Current JFrame that is loaded
+     * @param dimension Dimensions you want to set
      */
     @Override
     public void setMinimumSize(JFrame frame, Dimension dimension) {
@@ -52,9 +52,11 @@ public class FrameScaler implements FrameScalerInterface {
 
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 
-        int display_width = gd.getDisplayMode().getWidth();
+        int displayWidth = gd.getDisplayMode().getWidth();
 
-        if(display_width > 1920) {
+        System.out.println(displayWidth);
+
+        if(displayWidth <= 1920) {
             frame.setMinimumSize(new Dimension(width, height));
         } else {
             int set_width = width * 3;
