@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    compile 'nl.bobvandervalk:swinguiscaler4k:1.0.0'
+    compile 'nl.bobvandervalk:swinguiscaler4k:1.0.1'
 }
 ```
 Set up your JFrame
